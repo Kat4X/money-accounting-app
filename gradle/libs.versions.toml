@@ -11,6 +11,7 @@ junitVersion = "1.2.1"
 kotlin = "2.0.20"
 kotlinxSerializationJson = "1.7.1"
 lifecycleRuntimeKtx = "2.8.4"
+material = "1.12.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,6 +32,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 decompose = { group = "com.arkivanov.decompose", name = "decompose", version.ref = "decompose" }
 decompose-extension-compose = { group = "com.arkivanov.decompose", name = "extensions-compose", version.ref = "decompose" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
