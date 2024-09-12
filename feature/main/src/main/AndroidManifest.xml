@@ -3,7 +3,7 @@
 
     <application>
         <activity
-            android:name="com.zet.main.ui.MainActivity"
+            android:name="com.zet.main.ui.MainRootActivity"
             android:exported="true"
             android:theme="@style/Theme.MoneyAccountingApp">
             <intent-filter>
