@@ -1,12 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
-include(":feature:transactions")
-
-
-include(":core:decompose")
-
-
 pluginManagement {
+    includeBuild("build-logic")
+
     repositories {
         google {
             content {
@@ -31,7 +27,10 @@ dependencyResolutionManagement {
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
+
 rootProject.name = "money-accounting-app"
 include(":app")
-include(":feature:main")
+include(":core:decompose")
 include(":core:desygn")
+include(":feature:main")
+include(":feature:transactions")
