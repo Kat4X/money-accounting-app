@@ -28,6 +28,7 @@ android {
 dependencies {
     implementation(projects.core.desygn)
     implementation(projects.core.decompose)
+    implementation(projects.feature.transactions)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

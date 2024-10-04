@@ -15,7 +15,7 @@ tasks.withType<KotlinCompile> {
     compilerOptions {
         freeCompilerArgs.set(
             listOf(
-                "-Xopt-in=androidx.compose.material.ExperimentalMaterialApi",
+                "-Xopt-in=androidx.compose.material3.ExperimentalMaterial3Api",
                 "-Xopt-in=androidx.compose.foundation.ExperimentalFoundationApi",
                 "-Xopt-in=androidx.compose.foundation.layout.ExperimentalLayoutApi",
                 "-Xopt-in=androidx.compose.ui.ExperimentalComposeUiApi",

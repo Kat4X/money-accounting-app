@@ -2,7 +2,6 @@ plugins {
     id("com.zet.android.library")
     id("com.zet.android.compose")
     alias(libs.plugins.kotlin.compose)
-    id("kotlin-parcelize")
 }
 
 android {
@@ -11,16 +10,6 @@ android {
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
     }
 }
 

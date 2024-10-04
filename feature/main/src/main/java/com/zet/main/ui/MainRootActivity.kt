@@ -1,5 +1,6 @@
 package com.zet.main.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -13,17 +14,21 @@ import com.zet.main.ui.screen.root.DefaultRootComponent
 import com.zet.main.ui.screen.root.RootContent
 
 class MainRootActivity : ComponentActivity() {
+
+    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
         val rootComponent = DefaultRootComponent(componentContext = defaultComponentContext())
+
         setContent {
             AppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(modifier = Modifier.fillMaxSize()) { _ ->
                     RootContent(
                         component = rootComponent,
-                        modifier = Modifier.fillMaxSize(),
+                        modifier = Modifier
+                            .fillMaxSize(),
                     )
                 }
             }

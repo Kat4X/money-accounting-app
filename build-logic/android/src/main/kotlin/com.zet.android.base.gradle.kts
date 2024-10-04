@@ -1,5 +1,6 @@
 import com.android.build.gradle.BaseExtension
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 
 plugins {
     id("kotlin-android")
@@ -25,8 +26,9 @@ configure<BaseExtension> {
     }
 }
 
-tasks.withType<KotlinCompile>().configureEach {
-    kotlinOptions {
-        jvmTarget = "19"
+tasks.withType<KotlinJvmCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_19)
+        freeCompilerArgs.add("-opt-in=kotlin.RequiresOptIn")
     }
 }

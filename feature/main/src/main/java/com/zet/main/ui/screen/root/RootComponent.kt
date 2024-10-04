@@ -7,8 +7,8 @@ import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.value.Value
 import com.zet.main.ui.screen.AddTransactionComponent
 import com.zet.main.ui.screen.DefaultAddTransactionComponent
-import com.zet.main.ui.screen.DefaultTransactionsListComponent
-import com.zet.main.ui.screen.TransactionsListComponent
+import com.zet.transactions.screen.transactions.DefaultTransactionsListComponent
+import com.zet.transactions.screen.transactions.TransactionsListComponent
 import kotlinx.serialization.Serializable
 
 interface RootComponent {
