@@ -1,4 +1,4 @@
-package com.zet.transactions.screen.transactions
+package com.zet.feature.transactions.screen.transactions
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -18,8 +18,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.zet.desygn.component.NavigationBar
 import com.zet.desygn.theme.AppTheme
 import com.zet.feature.transactions.R
+import com.zet.feature.transactions.screen.transactions.component.PreviewTransactionsListComponent
+import com.zet.feature.transactions.screen.transactions.component.TransactionsListComponent
+import com.zet.feature.transactions.screen.transactions.view.TransactionBlock
 
 @Composable
 fun TransactionsListScreen(
@@ -35,15 +39,14 @@ fun TransactionsListScreen(
         topBar = {
             TopAppBar(
                 title = { Text(text = stringResource(R.string.transactions)) },
-                modifier = Modifier
-                    .fillMaxWidth(),
+                modifier = Modifier.fillMaxWidth(),
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                     titleContentColor = MaterialTheme.colorScheme.onPrimary,
                 ),
             )
         },
-        containerColor = MaterialTheme.colorScheme.secondaryContainer,
+        containerColor = MaterialTheme.colorScheme.background,
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {},
@@ -55,43 +58,43 @@ fun TransactionsListScreen(
                 )
             }
         },
+        bottomBar = {
+            NavigationBar(modifier = Modifier.fillMaxWidth())
+        },
     ) { innerPadding ->
-        Box(
-            modifier = Modifier.background(MaterialTheme.colorScheme.primary),
+        LazyColumn(
+            modifier = Modifier
+                .padding(innerPadding)
+                .background(MaterialTheme.colorScheme.primary)
+                .fillMaxSize()
+                .clip(
+                    RoundedCornerShape(
+                        bottomEnd = 0.dp,
+                        bottomStart = 0.dp,
+                        topEnd = 36.dp,
+                        topStart = 36.dp,
+                    ),
+                )
+                .background(MaterialTheme.colorScheme.background),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
+            contentPadding = PaddingValues(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            LazyColumn(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(innerPadding)
-                    .clip(
-                        RoundedCornerShape(
-                            bottomEnd = 0.dp,
-                            bottomStart = 0.dp,
-                            topEnd = 36.dp,
-                            topStart = 36.dp,
-                        ),
-                    )
-                    .background(MaterialTheme.colorScheme.surface),
-                verticalArrangement = Arrangement.spacedBy(16.dp),
-                contentPadding = PaddingValues(16.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
-                item {
-                    Text(
-                        text = "Месяц",
-                        style = MaterialTheme.typography.titleMedium,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(horizontal = 16.dp),
-                    )
-                }
-                items(state.transactionsList) { model ->
-                    TransactionBlock(
-                        model = model,
-                        onClick = {},
-                        modifier = Modifier.fillMaxWidth(),
-                    )
-                }
+            item {
+                Text(
+                    text = stringResource(R.string.month),
+                    style = MaterialTheme.typography.titleMedium,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp),
+                )
+            }
+            items(state.transactionsList) { model ->
+                TransactionBlock(
+                    model = model,
+                    onClick = {},
+                    modifier = Modifier.fillMaxWidth(),
+                )
             }
         }
     }

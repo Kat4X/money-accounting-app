@@ -1,4 +1,4 @@
-package com.zet.transactions.domain
+package com.zet.feature.transactions.domain
 
 class AddTransactionUseCase {
     fun execute() {

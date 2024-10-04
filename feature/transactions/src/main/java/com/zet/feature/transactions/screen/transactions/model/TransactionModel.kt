@@ -1,4 +1,4 @@
-package com.zet.transactions.screen.transactions.model
+package com.zet.feature.transactions.screen.transactions.model
 
 data class TransactionModel(
     val name: String,

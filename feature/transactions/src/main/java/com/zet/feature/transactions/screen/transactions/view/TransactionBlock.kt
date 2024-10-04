@@ -1,4 +1,4 @@
-package com.zet.transactions.screen.transactions
+package com.zet.feature.transactions.screen.transactions.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.zet.desygn.R
 import com.zet.desygn.theme.AppTheme
-import com.zet.transactions.screen.transactions.model.TransactionModel
+import com.zet.feature.transactions.screen.transactions.model.TransactionModel
 
 @Composable
 internal fun TransactionBlock(
@@ -37,7 +37,7 @@ internal fun TransactionBlock(
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Row(
-            modifier = Modifier.weight(0.55f),
+            modifier = Modifier.weight(weight = 0.55f),
             horizontalArrangement = Arrangement.spacedBy(16.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
@@ -55,7 +55,7 @@ internal fun TransactionBlock(
 
         // TODO выровнять блок с оплатой
         Row(
-            modifier = Modifier.weight(0.5f),
+            modifier = Modifier.weight(weight = 0.5f),
             horizontalArrangement = Arrangement.spacedBy(16.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
@@ -68,7 +68,7 @@ internal fun TransactionBlock(
                 text = model.typeOfBadge,
                 style = TextStyle(
                     fontSize = 12.sp,
-                    fontWeight = FontWeight.Thin,
+                    fontWeight = FontWeight.Normal,
                     textAlign = TextAlign.Center,
                 ),
                 modifier = Modifier.width(50.dp),

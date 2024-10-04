@@ -1,4 +1,4 @@
-package com.zet.transactions.domain
+package com.zet.feature.transactions.domain
 
 data class TransactionEntity(
     val name: String,

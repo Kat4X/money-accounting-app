@@ -5,10 +5,10 @@ import com.arkivanov.decompose.router.stack.ChildStack
 import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.value.Value
+import com.zet.feature.transactions.screen.transactions.component.DefaultTransactionsListComponent
+import com.zet.feature.transactions.screen.transactions.component.TransactionsListComponent
 import com.zet.main.ui.screen.AddTransactionComponent
 import com.zet.main.ui.screen.DefaultAddTransactionComponent
-import com.zet.transactions.screen.transactions.DefaultTransactionsListComponent
-import com.zet.transactions.screen.transactions.TransactionsListComponent
 import kotlinx.serialization.Serializable
 
 interface RootComponent {

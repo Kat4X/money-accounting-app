@@ -1,7 +1,7 @@
-package com.zet.transactions.screen.transactions
+package com.zet.feature.transactions.screen.transactions.component
 
 import com.arkivanov.decompose.ComponentContext
-import com.zet.transactions.screen.transactions.model.TransactionModel
+import com.zet.feature.transactions.screen.transactions.model.TransactionModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

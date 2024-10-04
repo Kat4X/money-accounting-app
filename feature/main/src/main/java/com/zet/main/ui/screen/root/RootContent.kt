@@ -6,8 +6,8 @@ import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.extensions.compose.stack.Children
 import com.arkivanov.decompose.extensions.compose.stack.animation.fade
 import com.arkivanov.decompose.extensions.compose.stack.animation.stackAnimation
-import com.zet.main.ui.screen.AddTransactionScreen
-import com.zet.transactions.screen.transactions.TransactionsListScreen
+import com.zet.feature.transactions.screen.add.AddTransactionScreen
+import com.zet.feature.transactions.screen.transactions.TransactionsListScreen
 
 @Composable
 internal fun RootContent(
@@ -20,11 +20,11 @@ internal fun RootContent(
         animation = stackAnimation(fade()),
     ) {
         when (val child = it.instance) {
-            is RootComponent.Child.AddTransactionChild -> AddTransactionScreen()
             is RootComponent.Child.TransactionsListChild -> TransactionsListScreen(
                 component = child.component,
                 modifier = Modifier.fillMaxSize(),
             )
+            is RootComponent.Child.AddTransactionChild -> AddTransactionScreen()
         }
     }
 }
