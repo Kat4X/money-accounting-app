@@ -3,6 +3,7 @@ plugins {
     id("com.zet.android.compose")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
+    id("plugin.detekt")
 }
 
 android {

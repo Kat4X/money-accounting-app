@@ -8,6 +8,8 @@ plugins {
     alias(libs.plugins.kotlin.parcelize) apply false
     alias(libs.plugins.kotlin.serialization) apply false
     alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.detekt) apply false
+    id("plugin.violations")
 }
 
 tasks.register<Delete>("clean") {

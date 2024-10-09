@@ -7,8 +7,6 @@ import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.value.Value
 import com.zet.feature.transactions.screen.transactions.component.DefaultTransactionsListComponent
 import com.zet.feature.transactions.screen.transactions.component.TransactionsListComponent
-import com.zet.main.ui.screen.AddTransactionComponent
-import com.zet.main.ui.screen.DefaultAddTransactionComponent
 import kotlinx.serialization.Serializable
 
 interface RootComponent {
@@ -16,7 +14,7 @@ interface RootComponent {
 
     sealed class Child {
         class TransactionsListChild(val component: TransactionsListComponent) : Child()
-        class AddTransactionChild(val component: AddTransactionComponent) : Child()
+        class AddTransactionChild() : Child()
     }
 }
 
@@ -39,7 +37,7 @@ internal class DefaultRootComponent(
             )
 
             Config.AddTransaction -> RootComponent.Child.AddTransactionChild(
-                component = DefaultAddTransactionComponent(componentContext),
+//                component = DefaultAddTransactionComponent(componentContext),
             )
         }
 

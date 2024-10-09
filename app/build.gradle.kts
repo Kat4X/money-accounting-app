@@ -2,6 +2,7 @@ plugins {
     id("com.zet.android.app")
     id("com.zet.android.compose")
     alias(libs.plugins.kotlin.compose)
+    id("plugin.detekt")
 }
 
 android {
